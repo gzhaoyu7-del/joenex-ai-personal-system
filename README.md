@@ -4,7 +4,7 @@ An interactive knowledge-discovery prototype that turns a deck of concepts into 
 
 [View the live prototype](https://knowledge-orbit.netlify.app)
 
-![Knowledge Orbit desktop experience](artifacts/phase15/01-home-bilingual.png)
+![JOENEX AI website and web app portfolio](artifacts/joenex-ai-website-web-app.png)
 
 ## What the project demonstrates
 
