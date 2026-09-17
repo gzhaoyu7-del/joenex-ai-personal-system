@@ -1,59 +1,78 @@
 # JOENEX / Knowledge Orbit
 
-An interactive knowledge-discovery prototype that turns a deck of concepts into a cinematic spatial draw. Instead of presenting another flashcard grid, Knowledge Orbit invites the user to spin a field of ideas, land on one concept, and decide what to understand next.
+> A cinematic, interactive web experience for discovering what to learn next.
 
-[View the live prototype](https://knowledge-orbit.netlify.app)
+<img src="docs/images/joenex-portfolio-cover.png" alt="JOENEX AI website and web app portfolio" width="100%">
 
-![JOENEX AI website and web app portfolio](artifacts/joenex-ai-website-web-app.png)
+## Overview
 
-## What the project demonstrates
+Knowledge Orbit is a personal JOENEX product prototype that turns a collection of ideas into an engaging spatial experience. Instead of browsing a conventional list or flashcard grid, users spin an animated orbit, land on a concept, and choose what to explore next.
 
-- A responsive, animated knowledge orbit with randomized selection, staged deceleration, reveal states, and synchronized mechanical sound.
-- A Three.js ambient scene combined with layered 2D card motion to create a lightweight 3D UI without sacrificing readable content.
-- An interactive dashboard for creating, duplicating, selecting, and editing bilingual knowledge decks.
-- Manual, batch, pasted-text, and text-based PDF input flows, including an editable concept-review step before a deck is created.
-- Optional AI-assisted concept extraction through a user-supplied OpenRouter key, with a local semantic preview when no key is supplied.
-- Browser-based hand-gesture control powered by MediaPipe: an open palm starts the orbit and a closed hand locks the target.
-- Creator Mode with 9:16 and 16:9 safe-frame previews for recording short-form and landscape video.
-- Keyboard, mouse, touch, reduced-motion, responsive-layout, and local-persistence support.
+The project demonstrates how a branded web product can combine clear information design, motion, sound, 3D atmosphere, content-management tools, and experimental AI interaction in one responsive interface. It was created as a portfolio piece for prospective clients looking for polished React websites, interactive dashboards, MVPs, or AI-enabled product concepts.
 
-## Technology
+## Live Demo
 
-- React 19 and TypeScript
-- Vite
-- Three.js with React Three Fiber
-- Framer Motion
-- Tailwind CSS plus a custom visual system
-- Zustand for local application state
-- MediaPipe Tasks Vision for on-device hand tracking
-- PDF.js for in-browser text extraction
-- Web Audio API for procedural interaction sound
-- Netlify for the current prototype deployment
+**[Open the live Knowledge Orbit experience →](https://knowledge-orbit.netlify.app)**
 
-## Product and assistant concept
+Click **DRAW** or press the space bar to run the selector. The workbench also allows you to create decks, add concepts, import content, adjust sound, and enable optional camera-based gesture controls.
 
-The current build includes an assistant-like knowledge workflow: source material can be parsed into candidate concepts, reviewed, edited, and converted into an interactive deck. The optional OpenRouter route is a **prototype BYOK integration** and runs directly from the browser.
+For the best first experience, use a modern desktop browser. Mobile layouts and Creator Mode are also supported.
 
-Voice interaction is a **planned concept**, not an implemented feature. A production assistant version would also move AI requests behind a server-side proxy and add authentication, usage controls, and secure secret storage.
+## Key Features
+
+- **Cinematic knowledge draw** — randomized selection with acceleration, deceleration, reveal states, and synchronized mechanical sound.
+- **Interactive knowledge dashboard** — create, duplicate, select, and manage bilingual knowledge decks directly in the browser.
+- **Flexible content input** — add concepts one at a time, paste a batch list, import source text, or extract text from supported PDFs.
+- **Concept review workflow** — review, edit, select, or remove extracted concepts before creating a new deck.
+- **3D visual atmosphere** — Three.js ambience combined with layered card motion and a custom dark editorial interface.
+- **Gesture control** — MediaPipe hand tracking lets an open palm start the orbit and a closed hand lock the selected card.
+- **Creator Mode** — 9:16 and 16:9 safe-frame previews designed for recording social and presentation content.
+- **Responsive interaction** — keyboard, mouse, touch, reduced-motion support, local persistence, and procedural audio.
+- **Optional AI extraction** — a working prototype can call OpenRouter with a user-supplied key; a local preview route is available without a key.
+
+## Tech Stack
+
+| Technology | Role in the product |
+| --- | --- |
+| React 19 + TypeScript | Component-based interface and reliable application logic |
+| Vite | Fast local development and production builds |
+| Three.js + React Three Fiber | Animated 3D background atmosphere |
+| Framer Motion | Orbit movement, transitions, and reveal choreography |
+| Zustand | Deck, settings, and experience state with browser persistence |
+| MediaPipe Tasks Vision | On-device hand-gesture recognition |
+| PDF.js | In-browser text extraction from text-based PDF files |
+| Web Audio API | Procedural selector and reveal sound design |
+| Tailwind CSS + custom CSS | Responsive layout and the JOENEX visual system |
+| Netlify | Hosting for the current live prototype |
 
 ## Screenshots
 
-Portfolio captures are stored in [`artifacts/phase15`](artifacts/phase15):
+### Main interactive orbit
 
-- [`01-home-bilingual.png`](artifacts/phase15/01-home-bilingual.png) — main desktop experience
-- [`03-pdf-concept-preview.png`](artifacts/phase15/03-pdf-concept-preview.png) — extracted-concept review flow
-- [`04-mobile-creator-bilingual.png`](artifacts/phase15/04-mobile-creator-bilingual.png) — mobile Creator Mode
+![Knowledge Orbit desktop interface](docs/images/knowledge-orbit-overview.png)
 
-## Run locally
+### Concept review workbench
+
+![Knowledge concept review and deck creation workflow](docs/images/concept-review-workbench.png)
+
+### Mobile Creator Mode
+
+![Knowledge Orbit mobile Creator Mode](docs/images/creator-mode-mobile.png)
+
+## Local Setup
 
 Requirements: Node.js 22 and npm.
 
 ```bash
+git clone https://github.com/gzhaoyu7-del/joenex-ai-personal-system.git
+cd joenex-ai-personal-system
 npm ci
 npm run dev
 ```
 
-Open the local URL printed by Vite. No environment file is required for the default experience.
+Open the local URL printed by Vite. The default experience does not require an environment file or external API key.
+
+Quality and production checks:
 
 ```bash
 npm run lint
@@ -61,27 +80,26 @@ npm run build
 npm run preview
 ```
 
-### Optional AI route
+## Project Status
 
-The interface accepts an OpenRouter key at runtime. No API key is included in this repository. In this prototype, a user-entered key is stored in that browser's local storage and requests are sent directly to OpenRouter. Use a restricted, disposable key for testing; do not treat this client-side flow as production credential storage.
+This repository is a **personal project and product prototype**. It is a working portfolio demonstration, not a production SaaS service.
 
-## Project status
+### Completed
 
-This is a **personal project and product prototype**, built as a portfolio demonstration of interactive frontend engineering and spatial UI design.
+- Animated knowledge orbit, randomized draw, and selected-card reveal
+- Built-in and user-created decks with browser persistence
+- Manual and batch concept entry
+- Text and text-based PDF ingestion with editable concept review
+- Responsive desktop and mobile layouts
+- Creator Mode framing, gesture input, and procedural sound
+- Local semantic preview and optional OpenRouter BYOK extraction
 
-Implemented today:
+### Prototype or planned
 
-- Knowledge decks and browser persistence
-- Animated random draw and selected-card reveal
-- Creator Mode and responsive layouts
-- Gesture input and procedural sound
-- Text/PDF ingestion and concept review
-- Local preview extraction and optional OpenRouter BYOK extraction
+- **OpenRouter integration:** functional as a client-side BYOK prototype, but production use requires a server-side proxy and secure secret handling.
+- **PDF support:** text-based PDFs are supported; scanned-document OCR is not implemented.
+- **Challenge Mode:** the visible action is reserved for a later phase and is currently disabled.
+- **Voice assistant:** planned concept; voice input and conversational control are not implemented.
+- **Production platform features:** authentication, cloud sync, payments, analytics, backend AI routing, and production-grade key management are not included.
 
-Prototype or planned:
-
-- The visible Challenge action is reserved for a future phase and is currently disabled.
-- Voice control and a conversational assistant are planned, not implemented.
-- Authentication, cloud sync, payments, analytics, a backend AI proxy, and production-grade key management are not included.
-
-The repository intentionally contains no bundled credentials or private environment configuration.
+No API keys, private credentials, or environment configuration are bundled with this repository.

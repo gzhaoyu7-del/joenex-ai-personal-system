@@ -19,7 +19,7 @@ coverage/
 # Generated project output
 tmp/
 output/
-artifacts/**/report.json
+artifacts/
 
 # Hosting state
 .netlify/
