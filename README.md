@@ -18,6 +18,15 @@ Click **DRAW** or press the space bar to run the selector. The workbench also al
 
 For the best first experience, use a modern desktop browser. Mobile layouts and Creator Mode are also supported.
 
+The demo is hosted on Netlify over HTTPS. No account or API key is needed to try the orbit, decks, import preview, or Creator Mode.
+
+- **Camera is optional:** enable it from the Gesture panel. Permission denial or model-loading failure leaves mouse, touch, and keyboard controls available. Hand tracking runs in the browser; camera frames are not uploaded.
+- **Sound starts after interaction:** browser autoplay restrictions may keep audio silent until you click or tap. Microphone and location access are not used.
+- **Local data only:** decks and settings are saved in this browser, not synced to an account. Avoid importing confidential content into a public portfolio demo.
+- **Optional AI is BYOK:** no OpenAI service or shared API key is configured. The OpenRouter prototype sends submitted source text to OpenRouter only when you choose that route with your own key. That key is saved in this browser's local storage; it is not a production-grade secret vault. Do not enter a key on a shared device, and clear it in Settings after testing.
+
+See [deployment notes](docs/deployment.md) for hosting settings and browser requirements.
+
 ## Key Features
 
 - **Cinematic knowledge draw** — randomized selection with acceleration, deceleration, reveal states, and synchronized mechanical sound.
